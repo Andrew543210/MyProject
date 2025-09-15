@@ -7654,10 +7654,6 @@ textarea.form-control-lg {
   margin-bottom: 0.25rem !important;
 
 }
-.mb-1:hover {
-  transform: scale(1.01);
-  transition: transform 0.1s;
-}
 
 .mb-2 {
   margin-bottom: 0.5rem !important;
@@ -10835,6 +10831,41 @@ html {
   height: 100%;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Libertinus+Keyboard&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.main-title {
+  font-family: 'Source Sans Pro', 'Arial', sans-serif;
+  font-size: 4.5rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #1D809F;
+  text-shadow: 0 4px 24px rgba(29,128,159,0.15), 0 1px 0 #fff;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+  line-height: 1.1;
+  background: linear-gradient(90deg, #1D809F 0%, #9ad1d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradient{
+ font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  color: #ffffff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 8px;
+  display: inline-block;
+
+}
+.gradient:hover{
+  background: linear-gradient(90deg, #1D809F 0%, #9ad1d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+}
 .content-section {
   padding-top: 7.5rem;
   padding-bottom: 7.5rem;
@@ -11073,34 +11104,25 @@ footer.footer .social-link:hover {
     margin: 0;
   }
   .portfolio-item .caption {
-    transition: background-color 0.7s, -webkit-clip-path 0.25s ease-out;
-    transition: clip-path 0.25s ease-out, background-color 0.7s;
-    transition: clip-path 0.25s ease-out, background-color 0.7s, -webkit-clip-path 0.25s ease-out;
-    -webkit-clip-path: inset(0px);
-            clip-path: inset(0px);
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    /* Всі transition та clip-path видалено */
   }
   .portfolio-item .caption .caption-content {
-    transition: opacity 0.25s;
     margin-left: 5rem;
     margin-right: 5rem;
     margin-bottom: 5rem;
+    /* Всі transition видалено */
   }
   .portfolio-item img {
-    transition: -webkit-clip-path 0.25s ease-out;
-    transition: clip-path 0.25s ease-out;
-    transition: clip-path 0.25s ease-out, -webkit-clip-path 0.25s ease-out;
-    -webkit-clip-path: inset(-1px);
-            clip-path: inset(-1px);
+    filter: blur(20px);
+    transition: filter 0.4s;
   }
   .portfolio-item:hover img {
-    -webkit-clip-path: inset(2rem);
-            clip-path: inset(2rem);
+    filter: blur(0);
   }
-  .portfolio-item:hover .caption {
-    background-color: rgba(29, 128, 159, 0.9);
-    -webkit-clip-path: inset(2rem);
-            clip-path: inset(2rem);
-  }
+  /* Всі hover-ефекти для .caption та .portfolio-item видалено */
 }
 
 .service-icon {

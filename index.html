@@ -1,195 +1,490 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Creative Photographer</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="img/camera-icon3.jpg" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Simple line icons-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
-        <nav id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand"><a href="#page-top">Start Bootstrap</a></li>
-                <li class="sidebar-nav-item"><a href="#page-top">Home</a></li>
-                <li class="sidebar-nav-item"><a href="#about">About</a></li>
-                <li class="sidebar-nav-item"><a href="#services">Services</a></li>
-                <li class="sidebar-nav-item"><a href="#portfolio">Portfolio</a></li>
-                <li class="sidebar-nav-item"><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <!-- Header-->
-        <header class="masthead d-flex align-items-center">
-            <div class="container px-4 px-lg-5 text-center">
-                <h1 class="mb-1">Creative Photographer</h1>
-                <h3 class="mb-5"><em>The Person to make you feel that You`re SPECIAL</em></h3>
-                <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
-            </div>
-        </header>
-        <!-- About-->
-        <section class="content-section bg-light" id="about">
-            <div class="container px-4 px-lg-5" style="min-height: 900px; display: flex; align-items: center;">
-                <div class="row gx-4 gx-lg-5 align-items-center justify-content-center w-100" style="height: 100%;">
-                    <div class="col-lg-6 text-center mb-4 mb-lg-0 d-flex justify-content-center align-items-center" style="height: 100%;">
-                        <img src="img/author-image.jpg" alt="Author portrait" class="img-fluid rounded shadow-lg" style="max-width: 450px; width: auto; height: 350px; object-fit: cover; transform: rotate(-90deg);" />
-                    </div>
-                    <div class="col-lg-6 d-flex flex-column justify-content-center align-items-start" style="height: 100%;">
-                        <h2 class="mb-4" style="font-size: 3rem;">Про автора</h2>
-                        <p class="lead mb-4" style="font-size: 1.7rem;">Я — креативний фотограф із Києва, який допомагає людям відчути себе особливими на кожному кадрі. Моя пристрасть — створювати унікальні портрети, які розкривають характер і емоції. Працюю як у студії, так і на природі, завжди шукаю нові ідеї та натхнення. Якщо ви хочете незабутню фотосесію — звертайтеся!</p>
-                        <a class="btn btn-dark btn-xl" href="#services">Дізнатися більше про послуги</a>
-                    </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Creative Photographer</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="img/camera-icon3.jpg" />
+    <!-- Font Awesome icons (free version)-->
+    <script
+      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Simple line icons-->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+  <body id="page-top">
+    <!-- Sidebar Toggle/Close Button -->
+    <button id="sidebarToggle" style="position: fixed; top: 32px; right: 32px; z-index: 1200; background: #b6f7c1; color: #222; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 50%; border: none; cursor: pointer; transition: right 0.35s cubic-bezier(.77,0,.18,1);">
+      <i class="fas fa-bars" id="sidebarIcon"></i>
+    </button>
+    <!-- Navigation-->
+  <nav id="sidebar-wrapper" style="background: #fff; box-shadow: 0 4px 24px rgba(0,0,0,0.12); border-radius: 18px; width: 320px; min-height: 100vh; position: fixed; right: 0; top: 0; z-index: 1100; display: flex; flex-direction: column; padding: 40px 32px 32px 32px; transform: translateX(100%); transition: transform 0.35s cubic-bezier(.77,0,.18,1);">
+      <ul class="sidebar-nav" style="list-style: none; padding: 0; margin: 0;">
+        <li class="sidebar-brand" style="margin-bottom: 32px; text-align: left;">
+          <a href="#page-top" style="font-size: 2rem; color: #222; font-weight: 700; text-decoration: none;">Aleksandrovich Maria</a>
+        </li>
+        <li class="sidebar-nav-item" style="margin-bottom: 18px;"><a href="#page-top" class="nav-link" style="font-size: 1.5rem; color: #222; font-weight: 600;">Головна</a></li>
+        <li class="sidebar-nav-item" style="margin-bottom: 18px;"><a href="#about" class="nav-link" style="font-size: 1.5rem; color: #222; font-weight: 600;">Про автора</a></li>
+        <li class="sidebar-nav-item" style="margin-bottom: 18px;"><a href="#services" class="nav-link" style="font-size: 1.5rem; color: #222; font-weight: 600;">Послуги</a></li>
+        <li class="sidebar-nav-item" style="margin-bottom: 18px;"><a href="#portfolio" class="nav-link" style="font-size: 1.5rem; color: #222; font-weight: 600;">Портфоліо</a></li>
+        <li class="sidebar-nav-item" style="margin-bottom: 0;"><a href="#contact" class="nav-link" style="font-size: 1.5rem; color: #222; font-weight: 600;">Контакти</a></li>
+      </ul>
+      <div style="margin-top: auto; padding-top: 32px;">
+        <ul class="list-inline mb-0" style="display: flex; gap: 18px; justify-content: flex-start;">
+          <li class="list-inline-item">
+            <a class="social-link rounded-circle" href="https://www.instagram.com/marie.graphy?igsh=MXg3ZGg1d294dnAx" target="_blank" style="background: #b6f7c1; color: #fff; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; transition: background 0.2s;">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="social-link rounded-circle" href="https://t.me/mariealxdr" target="_blank" style="background: #f7e600; color: #fff; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; transition: background 0.2s;">
+              <i class="fab fa-telegram-plane"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="social-link rounded-circle" href="https://www.tiktok.com/@alexxxdrr?_t=ZM-8zkBFoPVEHO&_r=1" target="_blank" style="background: #fffde4; color: #222; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; border: 2px solid #b6f7c1; transition: background 0.2s;">
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Header-->
+    <header class="masthead d-flex align-items-center">
+      <div class="container px-4 px-lg-5 text-center">
+        <h1 class="main-title gradient">Aleksandrovich Maria</h1>
+        <h2 class="mb-1">Креативний фотограф</h2>
+        <h3 class="mb-5">
+          <em>Дам тобі відчути, що ти ОСОБЛИВИЙ(ВА)!</em>
+        </h3>
+        <a class="btn btn-primary btn-xl" href="#about">Дізнатися більше</a>
+      </div>
+    </header>
+    <!-- About-->
+    <section class="content-section bg-light" id="about">
+      <div
+        class="container px-4 px-lg-5"
+        style="min-height: 900px; display: flex; align-items: center"
+      >
+        <div
+          class="row gx-4 gx-lg-5 align-items-center justify-content-center w-100"
+          style="height: 100%"
+        >
+          <div
+            class="col-lg-6 text-center mb-4 mb-lg-0 d-flex justify-content-center align-items-center"
+            style="height: 100%; width: 50%"
+          >
+            <!-- Карусель із 5 фото автора, показує 3 фото одночасно -->
+            <div
+              id="authorCarousel"
+              class="carousel slide w-100"
+              data-bs-ride="carousel"
+              style="width: 100%"
+            >
+              <div class="carousel-inner" style="width: 100%">
+                <div class="carousel-item active">
+                  <div
+                    class="d-flex justify-content-center align-items-center"
+                    style="width: 100%"
+                  >
+                    <img
+                      src="img/author-image.jpg"
+                      class="img-fluid rounded shadow-lg"
+                      style="
+                        width: 550px;
+                        height: 550px;
+                        object-fit: cover;
+                        transform: rotate(-90deg);
+                      "
+                      alt="Author 1"
+                    />
+                  </div>
                 </div>
-            </div>
-        </section>
-        <!-- Services-->
-        <section class="content-section bg-primary text-white text-center" id="services">
-            <div class="container px-4 px-lg-5">
-                <div class="content-section-heading">
-                    <h3 class="text-secondary mb-0">Services</h3>
-                    <h2 class="mb-5">What We Offer</h2>
+                <div class="carousel-item">
+                  <div
+                    class="d-flex justify-content-center align-items-center"
+                    style="width: 100%"
+                  >
+                    <img
+                      src="img/author-image2.jpg"
+                      class="img-fluid rounded shadow-lg"
+                      style="
+                       width: 550px;
+                        height: 550px;
+                        object-fit: cover;
+                      "
+                      alt="Author 2"
+                    />
+                  </div>
                 </div>
-                <div class="row gx-4 gx-lg-5">
-                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-screen-smartphone"></i></span>
-                        <h4><strong>Responsive</strong></h4>
-                        <p class="text-faded mb-0">Looks great on any screen size!</p>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-pencil"></i></span>
-                        <h4><strong>Redesigned</strong></h4>
-                        <p class="text-faded mb-0">Freshly redesigned for Bootstrap 5.</p>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
-                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-like"></i></span>
-                        <h4><strong>Favorited</strong></h4>
-                        <p class="text-faded mb-0">
-                            Millions of users
-                            <i class="fas fa-heart"></i>
-                            Start Bootstrap!
-                        </p>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-mustache"></i></span>
-                        <h4><strong>Question</strong></h4>
-                        <p class="text-faded mb-0">I mustache you a question...</p>
-                    </div>
+                <div class="carousel-item">
+                  <div
+                    class="d-flex justify-content-center align-items-center"
+                    style="width: 100%"
+                  >
+                    <img
+                      src="img/author-image3.jpg"
+                      class="img-fluid rounded shadow-lg"
+                      style="
+                       width: 550px;
+                        height: 550px;
+                        object-fit: cover;
+                      "
+                      alt="Author 3"
+                    />
+                  </div>
                 </div>
-            </div>
-        </section>
-        <!-- Callout-->
-        <section class="callout">
-            <div class="container px-4 px-lg-5 text-center">
-                <h2 class="mx-auto mb-5">
-                    Welcome to
-                    <em>your</em>
-                    next website!
-                </h2>
-                <a class="btn btn-primary btn-xl" href="https://startbootstrap.com/theme/stylish-portfolio/">Download Now!</a>
-            </div>
-        </section>
-        <!-- Portfolio-->
-        <section class="content-section" id="portfolio">
-            <div class="container px-4 px-lg-5">
-                <div class="content-section-heading text-center">
-                    <h3 class="text-secondary mb-0">Portfolio</h3>
-                    <h2 class="mb-5">Recent Projects</h2>
+                <div class="carousel-item">
+                  <div
+                    class="d-flex justify-content-center align-items-center"
+                    style="width: 100%"
+                  >
+                    <img
+                      src="img/author-image4.jpg"
+                      class="img-fluid rounded shadow-lg"
+                      style="
+                       width: 550px;
+                        height: 550px;
+                        object-fit: cover;
+                      "
+                      alt="Author 4"
+                    />
+                  </div>
                 </div>
-                <div class="row gx-0">
-                    <div class="col-lg-6">
-                        <a class="portfolio-item" href="#!">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <div class="h2">Portrait in Nature</div>
-                                    <p class="mb-0">A serene portrait surrounded by lush green forest.</p>
-                                </div>
-                            </div>
-                            <img class="img-fluid" src="img/portfolio-proj1.jpg" alt="Young woman with long blond hair in a white outfit, standing outdoors in a green forest." />
-                        </a>
-                    </div>
-                    <div class="col-lg-6">
-                        <a class="portfolio-item" href="#!">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <div class="h2">Vintage Elegance</div>
-                                    <p class="mb-0">A graceful lady in a classic white dress with an umbrella, enjoying a timeless moment.</p>
-                                </div>
-                            </div>
-                            <img class="img-fluid" src="img/portfolio-proj2.jpg" alt="Woman in vintage white dress holding an umbrella, posing on a stone terrace with trees in the background." />
-                        </a>
-                    </div>
-                    <div class="col-lg-6">
-                        <a class="portfolio-item" href="#!">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <div class="h2">Minimalist Grace</div>
-                                    <p class="mb-0">Elegant studio portrait capturing posture, lines, and simplicity.</p>
-                                </div>
-                            </div>
-                            <img class="img-fluid" src="img/portfolio-proj3.jpg" alt="Woman in black dress leaning back on a chair, studio black-and-white photography." />
-                        </a>
-                    </div>
-                    <div class="col-lg-6">
-                        <a class="portfolio-item" href="#!">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <div class="h2">Urban Mood</div>
-                                    <p class="mb-0">A raw street portrait reflecting bold attitude and modern style.</p>
-                                </div>
-                            </div>
-                            <img class="img-fluid" src="img/portfolio-proj4.jpg" alt="Young woman in dark outfit posing on a city street, black-and-white photography." />
-                        </a>
-                    </div>
+                <div class="carousel-item">
+                  <div
+                    class="d-flex justify-content-center align-items-center"
+                    style="width: 100%"
+                  >
+                    <img
+                      src="img/author-image5.jpg"
+                      class="img-fluid rounded shadow-lg"
+                      style="
+                       width: 550px;
+                        height: 550px;
+                        object-fit: cover;
+                      "
+                      alt="Author 5"
+                    />
+                  </div>
                 </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#authorCarousel"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#authorCarousel"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
-        </section>
-        <!-- Call to Action-->
-        <section class="content-section bg-primary text-white">
-            <div class="container px-4 px-lg-5 text-center">
-                <h2 class="mb-4">The buttons below are impossible to resist...</h2>
-                <a class="btn btn-xl btn-light me-4" href="#!">Click Me!</a>
-                <a class="btn btn-xl btn-dark" href="#!">Look at Me!</a>
-            </div>
-        </section>
-        <!-- Map-->
-        <div class="map" id="contact">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1268.0875278296876!2d30.6226493!3d50.5309145!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d123c4e16cbf%3A0xa4de33913796660!2sMykola%20Zakrevskyi%20St%2C%2099%2C%20Kyiv%2C%2002000!5e0!3m2!1sen!2sua!4v1757854609868!5m2!1sen!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <br />
-            <small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a></small>
+          </div>
+          <div
+            class="col-lg-6 d-flex flex-column justify-content-center align-items-start"
+            style="height: 100%"
+          >
+            <h2 class="mb-4" style="font-size: 3rem">Про автора</h2>
+            <p class="lead mb-4" style="font-size: 1.7rem">
+              Я — креативна фотографиня із Києва, яка допомагає людям відчути
+              себе особливими на кожному кадрі. Моя пристрасть — створювати
+              унікальні портрети, які розкривають характер і емоції. Працюю як у
+              студії, так і на природі, завжди шукаю нові ідеї та натхнення.
+              Якщо ви хочете незабутню фотосесію — звертайтеся!
+            </p>
+            <a class="btn btn-dark btn-xl" href="#services"
+              >Дізнатися більше про послуги</a
+            >
+          </div>
         </div>
-        <!-- Footer-->
-        <footer class="footer text-center">
-            <div class="container px-4 px-lg-5">
-                <ul class="list-inline mb-5">
-                    <li class="list-inline-item">
-                        <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-facebook"></i></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-twitter"></i></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="social-link rounded-circle text-white" href="#!"><i class="icon-social-github"></i></a>
-                    </li>
-                </ul>
-                <p class="text-muted small mb-0">Copyright &copy; Your Website 2023</p>
+      </div>
+    </section>
+    <!-- Services-->
+    <section
+      class="content-section text-white text-center"
+      id="services"
+      style="background: url('img/bg-callout.jpg') center center/cover no-repeat; min-height: 700px; position: relative;"
+    >
+      <div style="background: rgba(0,0,0,0.6); position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></div>
+      <div class="container px-4 px-lg-5 position-relative" style="z-index: 2; padding-top: 80px; padding-bottom: 80px;">
+        <div class="content-section-heading mb-5">
+          <h3 class="text-secondary mb-0" style="font-size: 2.5rem; color: #fff;">Послуги</h3>
+          <h2 class="mb-5" style="font-size: 3.5rem; color: #fff;">Що я пропоную</h2>
+        </div>
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+            <span class="service-icon rounded-circle mx-auto mb-4" style="font-size: 3rem; background: rgba(255,255,255,0.15); color: #fff; width: 90px; height: 90px; display: flex; align-items: center; justify-content: center;">
+              <i class="fas fa-camera-retro"></i>
+            </span>
+            <h4 style="font-size: 1.7rem;"><strong>Портретна фотозйомка</strong></h4>
+            <p class="text-faded mb-0" style="font-size: 1.15rem;">Індивідуальні та сімейні портрети у студії чи на природі.</p>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+            <span class="service-icon rounded-circle mx-auto mb-4" style="font-size: 3rem; background: rgba(255,255,255,0.15); color: #fff; width: 90px; height: 90px; display: flex; align-items: center; justify-content: center;">
+              <i class="fas fa-heart"></i>
+            </span>
+            <h4 style="font-size: 1.7rem;"><strong>Love Story</strong></h4>
+            <p class="text-faded mb-0" style="font-size: 1.15rem;">Романтичні фотосесії для пар, заручин та весіль.</p>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+            <span class="service-icon rounded-circle mx-auto mb-4" style="font-size: 3rem; background: rgba(255,255,255,0.15); color: #fff; width: 90px; height: 90px; display: flex; align-items: center; justify-content: center;">
+              <i class="fas fa-user-tie"></i>
+            </span>
+            <h4 style="font-size: 1.7rem;"><strong>Бізнес-портрет</strong></h4>
+            <p class="text-faded mb-0" style="font-size: 1.15rem;">Професійні фото для резюме, соцмереж, корпоративних сайтів.</p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <span class="service-icon rounded-circle mx-auto mb-4" style="font-size: 3rem; background: rgba(255,255,255,0.15); color: #fff; width: 90px; height: 90px; display: flex; align-items: center; justify-content: center;">
+              <i class="fas fa-birthday-cake"></i>
+            </span>
+            <h4 style="font-size: 1.7rem;"><strong>Фотозйомка подій</strong></h4>
+            <p class="text-faded mb-0" style="font-size: 1.15rem;">Дні народження, вечірки, корпоративи, інші важливі події.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Portfolio-->
+    <section class="content-section" id="portfolio">
+      <div class="container px-4 px-lg-5">
+        <div class="content-section-heading text-center">
+          <h3 class="text-secondary mb-0">Portfolio</h3>
+          <h2 class="mb-5">Recent Projects</h2>
+        </div>
+        <div class="row gx-0">
+          <div class="col-lg-6">
+            <a class="portfolio-item" href="#!">
+              <div class="caption">
+                <div class="caption-content">
+                  <div class="h2">Portrait in Nature</div>
+                  <p class="mb-0">
+                    A serene portrait surrounded by lush green forest.
+                  </p>
+                </div>
+              </div>
+              <img
+                class="img-fluid"
+                src="img/portfolio-proj1.jpg"
+                alt="Young woman with long blond hair in a white outfit, standing outdoors in a green forest."
+              />
+            </a>
+          </div>
+          <div class="col-lg-6">
+            <a class="portfolio-item" href="#!">
+              <div class="caption">
+                <div class="caption-content">
+                  <div class="h2">Vintage Elegance</div>
+                  <p class="mb-0">
+                    A graceful lady in a classic white dress with an umbrella,
+                    enjoying a timeless moment.
+                  </p>
+                </div>
+              </div>
+              <img
+                class="img-fluid"
+                src="img/portfolio-proj2.jpg"
+                alt="Woman in vintage white dress holding an umbrella, posing on a stone terrace with trees in the background."
+              />
+            </a>
+          </div>
+          <div class="col-lg-6">
+            <a class="portfolio-item" href="#!">
+              <div class="caption">
+                <div class="caption-content">
+                  <div class="h2">Minimalist Grace</div>
+                  <p class="mb-0">
+                    Elegant studio portrait capturing posture, lines, and
+                    simplicity.
+                  </p>
+                </div>
+              </div>
+              <img
+                class="img-fluid"
+                src="img/portfolio-proj3.jpg"
+                alt="Woman in black dress leaning back on a chair, studio black-and-white photography."
+              />
+            </a>
+          </div>
+          <div class="col-lg-6">
+            <a class="portfolio-item" href="#!">
+              <div class="caption">
+                <div class="caption-content">
+                  <div class="h2">Urban Mood</div>
+                  <p class="mb-0">
+                    A raw street portrait reflecting bold attitude and modern
+                    style.
+                  </p>
+                </div>
+              </div>
+              <img
+                class="img-fluid"
+                src="img/portfolio-proj4.jpg"
+                alt="Young woman in dark outfit posing on a city street, black-and-white photography."
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    </section>
+    <!-- Map-->
+    <section class="contact-section" id="contact" style="background: #f7f7f7; padding: 60px 0;">
+      <div class="container px-4 px-lg-5">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-lg-8 mx-auto">
+            <div style="margin-bottom: 32px; text-align: center;">
+              <span style="display: inline-block; background: linear-gradient(90deg, #b6f7c1 0%, #f7e600 100%); color: #222; font-size: 2.1rem; font-weight: 700; padding: 12px 36px; border-radius: 18px; box-shadow: 0 2px 12px rgba(182,247,193,0.10); letter-spacing: 1px;">Де мене можна знайти</span>
             </div>
-        </footer>
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+            <div style="border-radius: 18px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.12);">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1268.0875278296876!2d30.6226493!3d50.5309145!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d123c4e16cbf%3A0xa4de33913796660!2sMykola%20Zakrevskyi%20St%2C%2099%2C%20Kyiv%2C%2002000!5e0!3m2!1sen!2sua!4v1757854609868!5m2!1sen!2sua"
+                width="100%"
+                height="400"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Modal Burger Menu -->
+    <!-- Sidebar без скриптів -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var sidebar = document.getElementById('sidebar-wrapper');
+        var toggleBtn = document.getElementById('sidebarToggle');
+        var sidebarIcon = document.getElementById('sidebarIcon');
+        var sidebarOpen = false;
+
+        function openSidebar() {
+          sidebar.style.transform = 'translateX(0)';
+          sidebarOpen = true;
+          document.body.style.overflow = 'hidden';
+          sidebarIcon.classList.remove('fa-bars');
+          sidebarIcon.classList.add('fa-times');
+          toggleBtn.style.right = '340px';
+        }
+
+        function closeSidebar() {
+          sidebar.style.transform = 'translateX(100%)';
+          sidebarOpen = false;
+          document.body.style.overflow = '';
+          sidebarIcon.classList.remove('fa-times');
+          sidebarIcon.classList.add('fa-bars');
+          toggleBtn.style.right = '32px';
+        }
+
+        toggleBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (!sidebarOpen) {
+            openSidebar();
+          } else {
+            closeSidebar();
+          }
+        });
+
+        // Закриття по кліку поза sidebar
+        document.addEventListener('click', function(e) {
+          if (sidebarOpen && !sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
+            closeSidebar();
+          }
+        });
+        // Закриття по Escape
+        document.addEventListener('keydown', function(e) {
+          if (sidebarOpen && e.key === 'Escape') {
+            closeSidebar();
+          }
+        });
+      });
+    </script>
+    <!-- Footer-->
+    <footer class="footer text-center" style="background: #fff; padding: 40px 0 0 0; border-top: 2px solid #f7e600;">
+      <div class="container px-4 px-lg-5">
+        <div class="row align-items-center" style="display: flex; flex-wrap: wrap;">
+          <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center" style="padding: 0 20px; min-height: 180px;">
+            <div style="width: 100%;">
+              <h4 style="font-size: 1.5rem; color: #222; margin-bottom: 18px; text-align: center; letter-spacing: 1px; font-weight: 700;">Загальна інформація</h4>
+              <ul style="list-style: none; padding: 0; margin: 0; font-size: 1.15rem; color: #222; text-align: center;">
+                <li style="margin-bottom: 12px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                  <i class="fas fa-envelope" style="color: #f7e600;"></i>
+                  <a href="mailto:marie.graphy@gmail.com" style="color: #222; text-decoration: underline; font-weight: 500;">marie.graphy@gmail.com</a>
+                </li>
+                <li style="margin-bottom: 12px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                  <i class="fas fa-phone" style="color: #b6f7c1;"></i>
+                  <a href="tel:+380678652607" style="color: #222; text-decoration: underline; font-weight: 500;">+38 (067) 865 26 07</a>
+                </li>
+                <li style="margin-bottom: 0; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                  <i class="fas fa-map-marker-alt" style="color: #f7e600;"></i>
+                  <span style="font-weight: 500;">м. Київ, вул. Миколи Закревського, 99</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center" style="padding: 0 20px; min-height: 180px;">
+            <ul class="list-inline mb-4" style="display: flex; justify-content: center; gap: 30px; margin-bottom: 24px;">
+              <li class="list-inline-item">
+                <a class="social-link rounded-circle" href="https://www.instagram.com/marie.graphy?igsh=MXg3ZGg1d294dnAx" target="_blank" style="background: #b6f7c1; color: #fff; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; font-size: 2rem; transition: background 0.2s; box-shadow: 0 2px 8px rgba(182,247,193,0.15);">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="social-link rounded-circle" href="https://t.me/mariealxdr" target="_blank" style="background: #f7e600; color: #fff; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; font-size: 2rem; transition: background 0.2s; box-shadow: 0 2px 8px rgba(247,230,0,0.12);">
+                  <i class="fab fa-telegram-plane"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="social-link rounded-circle" href="https://www.tiktok.com/@alexxxdrr?_t=ZM-8zkBFoPVEHO&_r=1" target="_blank" style="background: #fffde4; color: #222; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; font-size: 2rem; border: 2px solid #b6f7c1; transition: background 0.2s; box-shadow: 0 2px 8px rgba(182,247,193,0.10);">
+                  <i class="fab fa-tiktok"></i>
+                </a>
+              </li>
+            </ul>
+            <p class="small mb-0 mt-2" style="color: #222; font-size: 1.1rem; text-align: center; font-weight: 500; letter-spacing: 0.5px;">&copy; Aleksandrovich Maria, 2025. Всі права захищені.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top"
+      ><i class="fas fa-angle-up"></i
+    ></a>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+  </body>
 </html>
