@@ -602,6 +602,7 @@ progress {
   height: auto;
 }
 
+
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
@@ -10917,6 +10918,98 @@ html {
   border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* ======= Кнопка відкриття sidebar: чорний напівпрозорий фон, білі риски ======= */
+#sidebarToggle {
+  background: rgba(0,0,0,0.65) !important;
+  color: #fff !important;
+}
+#sidebarToggle i.fas.fa-bars,
+#sidebarToggle i.fas.fa-times {
+  color: #fff !important;
+  filter: none !important;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+/* ======= RESPONSIVE HEADER & ABOUT ======= */
+@media (max-width: 991.98px) {
+  header.masthead .container {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+  .main-title,
+  .main-title.gradient {
+    font-size: 2.2rem !important;
+  }
+  header.masthead h2 {
+    font-size: 1.3rem !important;
+  }
+  header.masthead h3 {
+    font-size: 1.1rem !important;
+  }
+  #about .container {
+    flex-direction: column !important;
+    min-height: 0 !important;
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+  #about .row {
+    flex-direction: column !important;
+    height: auto !important;
+  }
+  #about .col-lg-6 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 32px !important;
+    height: auto !important;
+  }
+  #about .carousel-inner img {
+    width: 90vw !important;
+    height: 60vw !important;
+    max-width: 350px !important;
+    max-height: 350px !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  header.masthead .container {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+  .main-title,
+  .main-title.gradient {
+    font-size: 1.5rem !important;
+  }
+  header.masthead h2 {
+    font-size: 1.1rem !important;
+  }
+  header.masthead h3 {
+    font-size: 1rem !important;
+  }
+  #about .lead {
+    font-size: 1.1rem !important;
+  }
+  #about .carousel-inner img {
+    width: 90vw !important;
+    height: 50vw !important;
+    max-width: 250px !important;
+    max-height: 250px !important;
+  }
+}
+
+/* ======= SIDEBAR NAV HIDE ON TABLET & MOBILE ======= */
+@media (max-width: 991.98px) {
+  #sidebar-wrapper {
+    min-width: 0 !important;
+    width: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    display: none !important;
+  }
+  #sidebarToggle {
+    display: none !important;
+  }
+}
+
 .sidebar-nav {
   position: absolute;
   top: 0;
@@ -11050,7 +11143,7 @@ footer.footer .social-link:hover {
   height: auto;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/header-photo.avif");
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/bckgr.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
