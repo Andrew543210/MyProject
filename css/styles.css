@@ -1,3 +1,43 @@
+/* --- Counters Section --- */
+.counters-section {
+  background: #f7f7f7;
+  padding: 48px 0 24px 0;
+}
+.counter-block {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(182,247,193,0.10);
+  padding: 32px 18px 24px 18px;
+  margin: 0 8px;
+  transition: box-shadow 0.2s;
+}
+.counter-block:hover {
+  box-shadow: 0 8px 32px rgba(29,128,159,0.10);
+}
+.counter-number {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1D809F;
+  margin-bottom: 8px;
+  transition: color 0.2s;
+}
+.counter-label {
+  font-size: 1.1rem;
+  color: #444;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+@media (max-width: 600px) {
+  .counter-block {
+    padding: 20px 8px 16px 8px;
+  }
+  .counter-number {
+    font-size: 2rem;
+  }
+  .counter-label {
+    font-size: 0.98rem;
+  }
+}
 /* FAQ Section Styles */
 .faq-section {
   background: #fffbe7;
