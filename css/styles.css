@@ -1,15 +1,116 @@
-@charset "UTF-8";
-/*!
-* Start Bootstrap - Stylish Portfolio v6.0.6 (https://startbootstrap.com/theme/stylish-portfolio)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-stylish-portfolio/blob/master/LICENSE)
-*/
-/*!
- * Bootstrap  v5.2.3 (https://getbootstrap.com/)
- * Copyright 2011-2022 The Bootstrap Authors
- * Copyright 2011-2022 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
+/* FAQ Section Styles */
+.faq-section {
+  background: #fffbe7;
+  padding: 60px 0;
+}
+.faq-list {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.faq-item {
+  background: #fff;
+  border-radius: 14px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 12px rgba(182,247,193,0.10);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+  cursor: pointer;
+}
+.faq-item:focus {
+  outline: 2px solid #ecb807;
+}
+.faq-question {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #222;
+  user-select: none;
+}
+.faq-arrow {
+  font-size: 1.5rem;
+  margin-left: 12px;
+  transition: transform 0.3s;
+}
+.faq-item.active .faq-arrow {
+  transform: rotate(180deg);
+}
+.faq-answer {
+  max-height: 0;
+  opacity: 0;
+  padding: 0 24px;
+  color: #444;
+  font-size: 1.08rem;
+  background: #f7f7f7;
+  transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.4s;
+  overflow: hidden;
+}
+.faq-item.active .faq-answer {
+  padding: 18px 24px 24px 24px;
+  max-height: 300px;
+  opacity: 1;
+  transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.4s;
+}
+@media (max-width: 600px) {
+  .faq-question {
+    font-size: 1rem;
+    padding: 16px 12px;
+  }
+  .faq-answer {
+    font-size: 0.98rem;
+    padding: 0 12px;
+  }
+  .faq-item.active .faq-answer {
+    padding: 12px 12px 18px 12px;
+  }
+}
+@media (max-width: 768px) {
+  .portfolio-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    max-width: 90vw;
+  }
+  .portfolio-item img {
+    filter: blur(18px) brightness(0.7);
+    transform: scale(1.08);
+    opacity: 0.7;
+    transition: filter 1.2s cubic-bezier(0.4,0,0.2,1),
+                transform 1.2s cubic-bezier(0.4,0,0.2,1),
+                opacity 1.2s cubic-bezier(0.4,0,0.2,1);
+    will-change: filter, transform, opacity;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .portfolio-item img.reveal {
+    filter: blur(0) brightness(1);
+    transform: scale(1);
+    opacity: 1;
+    transition: filter 1.2s cubic-bezier(0.4,0,0.2,1),
+                transform 1.2s cubic-bezier(0.4,0,0.2,1),
+                opacity 1.2s cubic-bezier(0.4,0,0.2,1);
+  }
+  .portfolio-item img {
+    /* Для stagger-ефекту */
+    transition-delay: 0.1s;
+  }
+  .portfolio-item:nth-child(2) img {
+    transition-delay: 0.3s;
+  }
+  .portfolio-item:nth-child(3) img {
+    transition-delay: 0.5s;
+  }
+  .portfolio-item:nth-child(4) img {
+    transition-delay: 0.7s;
+  }
+}
 :root {
   --bs-blue: #1D809F;
   --bs-indigo: #6610f2;
