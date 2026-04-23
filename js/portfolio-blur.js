@@ -1,36 +1,57 @@
-// Portfolio blur reveal on scroll for mobile
+// Portfolio modal carousel logic.
 (function() {
-  function isMobile() {
-    return window.innerWidth <= 768;
-  }
+  document.addEventListener('DOMContentLoaded', function() {
+    const modalEl = document.getElementById('portfolioModal');
+    const modalTitleEl = document.getElementById('portfolioModalTitle');
+    const carouselEl = document.getElementById('portfolioProjectCarousel');
+    const carouselInnerEl = document.getElementById('portfolioProjectCarouselInner');
 
-  function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    // Center of viewport
-    const viewportCenter = window.innerHeight / 2;
-    const elemCenter = rect.top + rect.height / 2;
-    // Consider in center if center of element is within 30% of viewport center
-    return Math.abs(elemCenter - viewportCenter) < rect.height / 2;
-  }
+    if (!modalEl || !modalTitleEl || !carouselEl || !carouselInnerEl || !window.bootstrap) {
+      return;
+    }
 
-  function revealOnScroll() {
-    if (!isMobile()) return;
-    document.querySelectorAll('.portfolio-item img').forEach(img => {
-      if (isInViewport(img.parentElement)) {
-        img.classList.add('reveal');
-      } else {
-        img.classList.remove('reveal');
-      }
+    const modal = new bootstrap.Modal(modalEl);
+    let carousel = null;
+
+    function buildSlides(images) {
+      return images
+        .map(function(src, idx) {
+          return '<div class="carousel-item' + (idx === 0 ? ' active' : '') + '">' +
+            '<img class="d-block w-100" src="' + src + '" alt="Project image ' + (idx + 1) + '">' +
+          '</div>';
+        })
+        .join('');
+    }
+
+    document.querySelectorAll('.portfolio-item[data-images]').forEach(function(card) {
+      card.addEventListener('click', function(event) {
+        event.preventDefault();
+
+        const title = card.getAttribute('data-title') || 'Project';
+        const images = (card.getAttribute('data-images') || '')
+          .split(',')
+          .map(function(item) { return item.trim(); })
+          .filter(Boolean);
+
+        if (!images.length) {
+          return;
+        }
+
+        modalTitleEl.textContent = title;
+        carouselInnerEl.innerHTML = buildSlides(images);
+
+        if (carousel) {
+          carousel.dispose();
+        }
+
+        carousel = new bootstrap.Carousel(carouselEl, {
+          interval: false,
+          wrap: true,
+          touch: true
+        });
+
+        modal.show();
+      });
     });
-  }
-
-  if (isMobile()) {
-    // Set initial blur
-    document.querySelectorAll('.portfolio-item img').forEach(img => {
-      img.classList.remove('reveal');
-    });
-    window.addEventListener('scroll', revealOnScroll);
-    window.addEventListener('resize', revealOnScroll);
-    revealOnScroll();
-  }
+  });
 })();

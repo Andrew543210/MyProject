@@ -14,8 +14,8 @@
       } else {
         if (target === 99) {
           el.textContent = '99%';
-        } else if (target === 30) {
-          el.textContent = '30+';
+        } else if (target === 20) {
+          el.textContent = '20+';
         } else {
           el.textContent = target;
         }
