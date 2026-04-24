@@ -11342,9 +11342,8 @@ footer.footer .social-link:hover {
 }
 
 .portfolio-modal .modal-content {
-  background: rgba(40, 40, 40, 0.78);
+  background: rgba(28, 28, 28, 0.96);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(18px);
 }
 
 .portfolio-modal .modal-header,
@@ -11364,33 +11363,18 @@ footer.footer .social-link:hover {
   border-radius: 12px;
 }
 
-.portfolio-modal .carousel::before,
-.portfolio-modal .carousel::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 80px;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
-  backdrop-filter: blur(8px);
-}
-
-.portfolio-modal .carousel::before {
-  left: 0;
-  background: linear-gradient(to right, rgba(110, 110, 110, 0.52), rgba(110, 110, 110, 0));
-}
-
-.portfolio-modal .carousel::after {
-  right: 0;
-  background: linear-gradient(to left, rgba(110, 110, 110, 0.52), rgba(110, 110, 110, 0));
-}
-
 .modal-backdrop {
   --bs-backdrop-bg: rgba(90, 90, 90, 0.72);
   --bs-backdrop-opacity: 1;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+}
+
+@media (max-width: 991.98px) {
+  .modal-backdrop {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
 }
 
 .service-icon {
