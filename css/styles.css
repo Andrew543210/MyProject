@@ -10943,32 +10943,33 @@ html {
   font-weight: 700;
   letter-spacing: 0.05em;
   color: #1D809F;
-  text-shadow: 0 4px 24px rgba(29,128,159,0.15), 0 1px 0 #fff;
   margin-bottom: 0.5rem;
   margin-top: 0;
   line-height: 1.1;
-  background: linear-gradient(90deg, #1D809F 0%, #9ad1d4 100%);
+  /* Виразний градієнт від насиченого океанічного до ніжного світло-блакитного */
+  background: linear-gradient(135deg, #0f5c73 0%, #1D809F 40%, #7ec8e0 80%, #c2e9fb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.gradient{
- font-family: 'Playfair Display', serif;
+
+.gradient {
+  font-family: 'Playfair Display', serif;
   font-size: 48px;
   color: #ffffff;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
-  background-color: rgba(0, 0, 0, 0.4);
+  text-shadow: none;
+  background-color: rgba(0, 0, 0, 0.2);
   padding: 20px;
   border-radius: 8px;
   display: inline-block;
-
 }
-.gradient:hover{
-  background: linear-gradient(90deg, #1D809F 0%, #9ad1d4 100%);
+
+.gradient:hover {
+  background: linear-gradient(135deg, #0f5c73, #1D809F, #1D809F, #0f5c73);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: none;
+  text-shadow: 0 0 8px rgba(29,128,159,0.5);
 }
 .content-section {
   padding-top: 7.5rem;
@@ -11186,7 +11187,7 @@ html {
 }
 
 .btn-xl {
-  padding: 1.25rem 2.5rem;
+  padding: 1rem 2rem;
 }
 
 .callout {
