@@ -12,6 +12,50 @@
 
     const modal = new bootstrap.Modal(modalEl);
     let carousel = null;
+    let mobileRevealObserver = null;
+
+    function setupMobilePortfolioReveal() {
+      const items = document.querySelectorAll('.portfolio-item');
+      if (!items.length) {
+        return;
+      }
+
+      const isMobileViewport = window.matchMedia('(max-width: 991.98px)').matches;
+      if (!isMobileViewport) {
+        if (mobileRevealObserver) {
+          mobileRevealObserver.disconnect();
+          mobileRevealObserver = null;
+        }
+        items.forEach(function(item) {
+          item.classList.remove('is-visible');
+        });
+        return;
+      }
+
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(function(item) {
+          item.classList.add('is-visible');
+        });
+        return;
+      }
+
+      if (mobileRevealObserver) {
+        mobileRevealObserver.disconnect();
+      }
+
+      mobileRevealObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          entry.target.classList.toggle('is-visible', entry.isIntersecting);
+        });
+      }, {
+        threshold: 0.45,
+        rootMargin: '0px 0px -10% 0px'
+      });
+
+      items.forEach(function(item) {
+        mobileRevealObserver.observe(item);
+      });
+    }
 
     function buildSlides(images) {
       return images
@@ -53,5 +97,8 @@
         modal.show();
       });
     });
+
+    setupMobilePortfolioReveal();
+    window.addEventListener('resize', setupMobilePortfolioReveal);
   });
 })();

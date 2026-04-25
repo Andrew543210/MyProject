@@ -11384,10 +11384,26 @@ footer.footer .social-link:hover {
   /* Всі hover-ефекти для .caption та .portfolio-item видалено */
 }
 
-@media (hover: none) and (pointer: coarse) {
-  .portfolio-item-hint {
+@media (max-width: 991.98px) {
+  .portfolio-item .portfolio-item-hint {
+    opacity: 0;
+    transform: translateY(0.7rem);
+  }
+  .portfolio-item.is-visible .caption {
+    background: linear-gradient(180deg, rgba(12, 14, 18, 0.18), rgba(12, 14, 18, 0.58));
+  }
+  .portfolio-item.is-visible .caption .caption-content .h2 {
+    transform: translateY(-0.1rem);
+  }
+  .portfolio-item.is-visible .portfolio-item-hint {
     opacity: 1;
-    transform: none;
+    transform: translateY(0);
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.35);
+  }
+  .portfolio-item.is-visible img {
+    filter: blur(0) brightness(1);
+    transform: scale(1);
   }
 }
 
