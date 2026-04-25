@@ -11281,19 +11281,67 @@ footer.footer .social-link:hover {
   display: flex;
   height: 100%;
   width: 100%;
-  background-color: rgba(33, 37, 41, 0.2);
+  background: linear-gradient(180deg, rgba(12, 14, 18, 0.12), rgba(12, 14, 18, 0.48));
   position: absolute;
   top: 0;
   bottom: 0;
   z-index: 1;
+  transition: background-color 0.35s ease, background 0.35s ease;
 }
 .portfolio-item .caption .caption-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.65rem;
   color: #fff;
   margin: auto 2rem 2rem;
+  max-width: calc(100% - 4rem);
 }
 .portfolio-item .caption .caption-content h2, .portfolio-item .caption .caption-content .h2 {
   font-size: 1.1rem;
   text-transform: none;
+  line-height: 1.15;
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.35s ease;
+}
+.portfolio-item-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 0;
+  transform: translateY(0.7rem);
+  transition: opacity 0.35s ease, transform 0.35s ease, background-color 0.35s ease, border-color 0.35s ease;
+}
+.portfolio-item-hint::after {
+  content: "→";
+  font-size: 0.95em;
+  line-height: 1;
+}
+.portfolio-item:hover .caption,
+.portfolio-item:focus-visible .caption {
+  background: linear-gradient(180deg, rgba(12, 14, 18, 0.18), rgba(12, 14, 18, 0.58));
+}
+.portfolio-item:hover .caption .caption-content .h2,
+.portfolio-item:focus-visible .caption .caption-content .h2 {
+  transform: translateY(-0.1rem);
+}
+.portfolio-item:hover .portfolio-item-hint,
+.portfolio-item:focus-visible .portfolio-item-hint {
+  opacity: 1;
+  transform: translateY(0);
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.35);
 }
 .portfolio-item img {
   width: 100%;
@@ -11301,9 +11349,9 @@ footer.footer .social-link:hover {
   object-fit: contain;
   filter: blur(20px) brightness(0.72);
   transform: scale(1.03);
-  transition: filter 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-              brightness 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: filter 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+              brightness 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .portfolio-item:hover img {
   filter: blur(0) brightness(1);
@@ -11326,11 +11374,21 @@ footer.footer .social-link:hover {
     margin-bottom: 5rem;
     /* Всі transition видалено */
   }
+  .portfolio-item-hint {
+    opacity: 0;
+  }
   .portfolio-item img {
     filter: blur(20px) brightness(0.72);
     transform: scale(1.03);
   }
   /* Всі hover-ефекти для .caption та .portfolio-item видалено */
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .portfolio-item-hint {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 #portfolio .row.gx-0 > [class*="col-"] {
